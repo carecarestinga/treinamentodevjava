@@ -2,7 +2,9 @@ package br.com.technocorp.mapper;
 
 import br.com.technocorp.database.modeldb.Usuario;
 import br.com.technocorp.modeldto.UsuarioModelDto;
+import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 public class UsuarioModelMapper {
 
     public static Usuario usuarioToUsuarioModelDto (UsuarioModelDto usuarioModelDto) {

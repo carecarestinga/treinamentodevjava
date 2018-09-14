@@ -1,35 +1,42 @@
 package br.com.technocorp.v1.facade;
 
+import br.com.technocorp.database.modeldb.Usuario;
 import br.com.technocorp.facade.UsuarioFacade;
-import br.com.technocorp.modeldto.UsuarioModelDto;
+import br.com.technocorp.service.UsuarioService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class UsuarioContractFacade implements UsuarioFacade {
 
+    private UsuarioService usuarioService;
 
-    @Override
-    public Iterable<UsuarioModelDto> buscarTodosUsuarios() {
-        return null;
+    @Autowired
+    public UsuarioContractFacade(UsuarioService usuarioService) {
+        this.usuarioService = usuarioService;
     }
 
     @Override
-    public UsuarioModelDto buscarUsuarioPorId(Long id) {
-        return null;
+    public Iterable<Usuario> buscarTodosUsuarios() {
+        return usuarioService.buscarTodosUsuarios();
     }
 
     @Override
-    public Boolean salvarUsuario(UsuarioModelDto usuarioModelDto) {
-        return null;
+    public Usuario buscarUsuarioPorId(Long id) {
+        return usuarioService.buscarUsuarioPorId(id);
     }
 
     @Override
-    public Boolean atualizarUsuario(UsuarioModelDto usuarioModelDto, Long id) {
-        return null;
+    public Boolean salvarUsuario(Usuario usuario) {
+        return usuarioService.salvarUsuario(usuario);
     }
 
     @Override
-    public Boolean excluirUsuario(UsuarioModelDto usuarioModelDto) {
-        return null;
+    public Boolean atualizarUsuario(Usuario usuario, Long id) {
+        return usuarioService.atualizarUsuario(usuario, id);
     }
 
+    @Override
+    public Boolean excluirUsuario(Usuario usuario) {
+        return usuarioService.excluirUsuario(usuario);
+    }
 
 }

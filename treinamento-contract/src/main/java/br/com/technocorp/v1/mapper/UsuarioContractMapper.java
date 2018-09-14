@@ -1,24 +1,24 @@
 package br.com.technocorp.v1.mapper;
 
 import br.com.technocorp.modeldto.UsuarioModelDto;
-import br.com.technocorp.v1.model.request.UsuarioRequest;
-import br.com.technocorp.v1.model.response.UsuarioResponse;
+import br.com.technocorp.v1.model.request.UsuarioModelRequest;
+import br.com.technocorp.v1.model.response.UsuarioModelResponse;
 
 public class UsuarioContractMapper {
 
-    public UsuarioResponse mapperToContract (UsuarioModelDto usuarioModelDto) {
-        return UsuarioResponse.builder()
+    public UsuarioModelResponse mapperToContract (UsuarioModelDto usuarioModelDto) {
+        return UsuarioModelResponse.builder()
                 .nomeUsuarioResp(usuarioModelDto.getNomeUsuario())
                 .loginUsuarioResp(usuarioModelDto.getLoginUsuario())
                 .senhaUsuarioResp(usuarioModelDto.getSenhaUsuario())
                 .build();
     }
 
-    public UsuarioModelDto mapperToImpl (UsuarioRequest usuarioRequest) {
+    public UsuarioModelDto mapperToImpl (UsuarioModelRequest usuarioModelRequest) {
         return UsuarioModelDto.builder()
-                .nomeUsuario(usuarioRequest.getNomeUsuarioReq())
-                .loginUsuario(usuarioRequest.getLoginUsuarioReq())
-                .senhaUsuario(usuarioRequest.getSenhaUsuarioReq())
+                .nomeUsuario(usuarioModelRequest.getNomeUsuarioReq())
+                .loginUsuario(usuarioModelRequest.getLoginUsuarioReq())
+                .senhaUsuario(usuarioModelRequest.getSenhaUsuarioReq())
                 .build();
     }
 

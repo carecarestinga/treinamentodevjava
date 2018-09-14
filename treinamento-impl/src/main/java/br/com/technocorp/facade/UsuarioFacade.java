@@ -1,20 +1,19 @@
 package br.com.technocorp.facade;
 
 import br.com.technocorp.database.modeldb.Usuario;
-import br.com.technocorp.modeldto.UsuarioModelDto;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public interface UsuarioFacade {
 
-    public Iterable<UsuarioModelDto> buscarTodosUsuarios();
+    public abstract Iterable<Usuario> buscarTodosUsuarios();
 
-    public UsuarioModelDto buscarUsuarioPorId(Long id);
+    public abstract Usuario buscarUsuarioPorId(Long id);
 
-    public Boolean salvarUsuario(UsuarioModelDto usuarioModelDto);
+    public Boolean salvarUsuario(Usuario usuario);
 
-    public Boolean atualizarUsuario(UsuarioModelDto usuarioModelDto, Long id);
+    public Boolean atualizarUsuario(Usuario usuario, Long id);
 
-    public Boolean excluirUsuario(UsuarioModelDto usuarioModelDto);
+    public Boolean excluirUsuario(Usuario usuario);
 
 }

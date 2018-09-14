@@ -1,1 +1,3 @@
 rootProject.name = 'treinamentodevjava'
+include "treinamento-contract"
+include "treinamento-impl"
